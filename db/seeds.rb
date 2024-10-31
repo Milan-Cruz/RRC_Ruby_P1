@@ -7,7 +7,7 @@ categories_response.each do |category_name|
 end
 
 # Fetch and seed jokes for each category
-20.times do
+200.times do
   joke_response = HTTParty.get("https://api.chucknorris.io/jokes/random")
   joke = Joke.find_or_create_by!(
     joke_text: joke_response["value"],
