@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :jokes, only: [:index, :show]
   resources :categories, only: [:index, :show]
 
+  # about
+  get "about", to: "pages#about"
+
   # Reveal health status on /up
   get "up" => "rails/health#show", as: :rails_health_check
 

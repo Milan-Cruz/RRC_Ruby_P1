@@ -1,0 +1,45 @@
+<h1>About This Project</h1>
+
+<h2>Dataset Description</h2>
+<p>For this project, we are using data from the <a href="https://api.chucknorris.io/" target="_blank">Chuck Norris API</a>, which provides random Chuck Norris jokes along with categories. This data is used to create a Ruby on Rails application that allows users to browse, search, and categorize jokes.</p>
+
+<h2>Data Source</h2>
+<ul>
+  <li><strong>API</strong>: <a href="https://api.chucknorris.io/" target="_blank">https://api.chucknorris.io/</a></li>
+  <li><strong>Endpoints Used:</strong>
+    <ul>
+      <li><code>/jokes/random</code>: Fetches a random joke.</li>
+      <li><code>/jokes/categories</code>: Fetches all available categories.</li>
+      <li><code>/jokes/random?category={category_name}</code>: Fetches a random joke from a specific category.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Structure of the Data</h2>
+
+<h3>Jokes:</h3>
+<ul>
+  <li><strong>id</strong>: A unique string identifier provided by the API (e.g., "iHdFyVwQTIqpF1DgpoMXlg").</li>
+  <li><strong>joke_text</strong>: The actual text of the joke (e.g., "Chuck Norris can divide by zero.").</li>
+  <li><strong>categories</strong>: An array of category names (e.g., ["animal", "career"]). A joke can belong to multiple categories.</li>
+  <li><strong>created_at</strong>: The timestamp when the joke was created (e.g., "2020-01-05T13:42:19.576Z").</li>
+  <li><strong>updated_at</strong>: The timestamp when the joke was last updated.</li>
+  <li><strong>icon_url</strong>: The URL of the Chuck Norris icon for the joke (e.g., "https://api.chucknorris.io/img/avatar/chuck-norris.png").</li>
+  <li><strong>url</strong>: The direct URL to the joke on the Chuck Norris website (e.g., "https://api.chucknorris.io/jokes/iHdFyVwQTIqpF1DgpoMXlg").</li>
+</ul>
+
+<h3>Categories:</h3>
+<ul>
+  <li><strong>name</strong>: A string representing the name of the category (e.g., "animal").</li>
+</ul>
+
+<h2>Database Tables and Relationships</h2>
+
+<ul>
+  <li><strong>Jokes Table</strong>: Stores jokes information.</li>
+  <li><strong>Categories Table</strong>: Stores categories.</li>
+  <li><strong>JokesCategories Table</strong>: Facilitates the many-to-many relationship between jokes and categories.</li>
+</ul>
+
+<%= image_tag "erd.png", alt: "ERD Diagram of Database Tables and Relationships", class: "responsive-image" %>
+
