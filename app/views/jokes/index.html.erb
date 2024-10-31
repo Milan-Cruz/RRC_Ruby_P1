@@ -1,12 +1,13 @@
-<h1>chucknorris.io Jokes</h1>
+<h1>Chuck Norris Jokes</h1>
+
 <%= form_with url: jokes_path, method: :get, local: true do %>
-    <%= label_tag :query, "Search Jokes" %>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search" %>
+  <%= label_tag :query, "Search Jokes" %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search" %>
 <% end %>
-  
-<ul>
+
+<ul class="grid-list">
   <% @jokes.each do |joke| %>
-    <li><%= link_to joke.joke_text, joke_path(joke) %></li>
+    <li><%= link_to joke.joke_text.truncate(50), joke_path(joke) %></li> <!-- Limit joke text to 30 characters -->
   <% end %>
 </ul>
