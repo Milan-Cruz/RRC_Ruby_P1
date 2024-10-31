@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :jokes, only: [:index, :show]
   resources :categories, only: [:index, :show]
 
+  #categories extra route
+  get "categories/uncategorized", to: "categories#show", defaults: { id: "uncategorized" }
+
   # about
   get "about", to: "pages#about"
 
