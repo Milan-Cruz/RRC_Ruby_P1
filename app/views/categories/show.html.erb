@@ -1,10 +1,10 @@
 <h1>Category: <%= @category_name %></h1>
 
 <h2>Jokes in this Category:</h2>
-<ul>
+<ul class="grid-list">
   <% if @jokes.any? %>
     <% @jokes.each do |joke| %>
-      <li><%= link_to joke.joke_text, joke_path(joke) %></li>
+      <li><%= link_to joke.joke_text.truncate(50), joke_path(joke) %></li> <!-- Truncate joke text to 50 characters -->
     <% end %>
   <% else %>
     <li>No jokes available for this category.</li>
