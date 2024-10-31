@@ -4,7 +4,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @jokes = @category.jokes
+    if params[:id] == "uncategorized"
+      @category_name = "Uncategorized"
+      @jokes = Joke.left_outer_joins(:categories).where(categories: { id: nil })
+    else
+      @category = Category.find(params[:id])
+      @category_name = @category.name
+      @jokes = @category.jokes
+    end
   end
 end

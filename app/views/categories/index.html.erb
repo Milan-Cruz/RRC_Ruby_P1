@@ -1,7 +1,8 @@
-<h1>Categories</h1>
+<h1>chucknorris.io Categories</h1>
 
 <ul>
   <% @categories.each do |category| %>
     <li><%= link_to category.name, category_path(category) %></li>
   <% end %>
+  <li><%= link_to "Uncategorized", category_path("uncategorized") %></li>
 </ul>
