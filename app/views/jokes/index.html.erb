@@ -11,3 +11,5 @@
     <li><%= link_to joke.joke_text.truncate(50), joke_path(joke) %></li> <!-- Limit joke text to 50 characters -->
   <% end %>
 </ul>
+
+<%= paginate @jokes %> <!-- Adds pagination controls -->
