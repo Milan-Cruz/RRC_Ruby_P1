@@ -1,2 +1,12 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1>Category: <%= @category.name %></h1>
+
+<h2>Jokes in this Category:</h2>
+<ul>
+  <% if @jokes.any? %>
+    <% @jokes.each do |joke| %>
+      <li><%= link_to joke.joke_text, joke_path(joke) %></li>
+    <% end %>
+  <% else %>
+    <li>No jokes available for this category.</li>
+  <% end %>
+</ul>

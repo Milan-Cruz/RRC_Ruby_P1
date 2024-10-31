@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # get "jokes/index"
   # get "jokes/show"
 
+  root "jokes#index"
+
   # Use resource routing for jokes and categories
   resources :jokes, only: [:index, :show]
   resources :categories, only: [:index, :show]

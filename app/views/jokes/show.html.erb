@@ -1,2 +1,18 @@
-<h1>Jokes#show</h1>
-<p>Find me in app/views/jokes/show.html.erb</p>
+<h1>Chuck Norris Joke</h1>
+
+<p><strong>Joke:</strong> <%= @joke.joke_text %></p>
+
+<p><strong>Categories:</strong>
+  <% if @joke.categories.any? %>
+    <ul>
+      <% @joke.categories.each do |category| %>
+        <li><%= category.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <em>No categories assigned</em>
+  <% end %>
+</p>
+
+<p><strong>API URL:</strong> <%= link_to @joke.url, @joke.url, target: "_blank" %></p>
+<img src="<%= @joke.icon_url %>" alt="Chuck Norris Icon">
