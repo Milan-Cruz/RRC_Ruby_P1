@@ -3,6 +3,10 @@
 <%= form_with url: jokes_path, method: :get, local: true do %>
   <%= label_tag :query, "Search Jokes" %>
   <%= text_field_tag :query, params[:query] %>
+
+  <%= label_tag :category_id, "Category" %>
+  <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]), include_blank: "All Categories" %>
+
   <%= submit_tag "Search" %>
 <% end %>
 
@@ -12,4 +16,4 @@
   <% end %>
 </ul>
 
-<%= paginate @jokes %> <!-- Adds pagination controls -->
+<%= paginate @jokes %> <!-- Pagination controls -->
