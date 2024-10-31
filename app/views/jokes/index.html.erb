@@ -1,4 +1,10 @@
 <h1>All Jokes</h1>
+<%= form_with url: jokes_path, method: :get, local: true do %>
+    <%= label_tag :query, "Search Jokes" %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search" %>
+<% end %>
+  
 <ul>
   <% @jokes.each do |joke| %>
     <li><%= link_to joke.joke_text, joke_path(joke) %></li>
