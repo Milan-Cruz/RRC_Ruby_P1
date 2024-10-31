@@ -18,6 +18,12 @@
   </head>
 
   <body>
+  <nav>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Jokes", jokes_path %>
+    <%= link_to "Categories", categories_path %>
+  </nav>
+
     <%= yield %>
   </body>
 </html>
