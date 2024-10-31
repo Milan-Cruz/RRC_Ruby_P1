@@ -33,8 +33,10 @@ This project leverages data from the [Chuck Norris API](https://api.chucknorris.
 - **Categories Table**: Stores available joke categories.
 - **JokesCategories Table**: Facilitates the many-to-many relationship between jokes and categories.
 
-## ERD Diagram (Optional)
-> If applicable, add an ERD diagram to visualize the database relationships.
+### ERD Diagram
+This diagram illustrates the relationship between the `Jokes`, `Categories`, and `JokesCategories` tables:
+
+![ERD Diagram of Database Tables and Relationships](app/assets/images/erd.png)
 
 ---
 

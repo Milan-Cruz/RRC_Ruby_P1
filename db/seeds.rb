@@ -32,7 +32,7 @@ faker_category = Category.find_or_create_by!(name: "FAKER")
   joke_text = Faker::ChuckNorris.fact
   joke = Joke.create!(
     joke_text: joke_text,
-    api_id: SecureRandom.uuid, # Generate a unique ID for Faker jokes to avoid conflicts
+    api_id: SecureRandom.uuid, # Generate a unique ID for Faker jokes
     icon_url: "https://api.chucknorris.io/img/avatar/chuck-norris.png", # Placeholder icon URL
     url: "https://api.chucknorris.io", # Placeholder URL for Faker jokes
   )
