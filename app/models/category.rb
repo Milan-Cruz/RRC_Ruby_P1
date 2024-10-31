@@ -1,5 +1,7 @@
 class Category < ApplicationRecord
-  has_and_belongs_to_many :jokes
+  # Associations
+  has_many :jokes_categories, dependent: :destroy
+  has_many :jokes, through: :jokes_categories
 
   # Validations
   validates :name, presence: true, uniqueness: true

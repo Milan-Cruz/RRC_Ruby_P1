@@ -10,16 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_30_232513) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_31_173855) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "categories_jokes", id: false, force: :cascade do |t|
-    t.integer "joke_id", null: false
-    t.integer "category_id", null: false
   end
 
   create_table "jokes", force: :cascade do |t|
@@ -29,5 +24,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_30_232513) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "jokes_categories", id: false, force: :cascade do |t|
+    t.integer "joke_id", null: false
+    t.integer "category_id", null: false
   end
 end

@@ -1,5 +1,7 @@
 class Joke < ApplicationRecord
-  has_and_belongs_to_many :categories
+  # Associations
+  has_many :jokes_categories, dependent: :destroy
+  has_many :categories, through: :jokes_categories
 
   # Validations
   validates :joke_text, presence: true, uniqueness: true
