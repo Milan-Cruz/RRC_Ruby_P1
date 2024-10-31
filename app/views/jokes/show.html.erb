@@ -6,11 +6,11 @@
   <% if @joke.categories.any? %>
     <ul>
       <% @joke.categories.each do |category| %>
-        <li><%= category.name %></li>
+        <li><%= link_to category.name, category_path(category) %></li> <!-- Link to category show page -->
       <% end %>
     </ul>
   <% else %>
-    <em>No categories assigned</em>
+    <%= link_to "Uncategorized", category_path("uncategorized") %> <!-- Link to uncategorized page -->
   <% end %>
 </p>
 
