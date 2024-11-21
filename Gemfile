@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "faker"
 gem "httparty"
-gem "bootstrap", "~> 5.2.0"
+gem "bootstrap", "~> 5.3.3"
 gem "kaminari" # pagination
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
